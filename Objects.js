@@ -11,7 +11,7 @@ function makeShape(X, Y){   //Other way to do the same thing
 let s1 = makeShape(1, 2);
 console.log(s1);
 
-function Shape(x, y){
+function Shape(x, y){   //Constructor
     this.x = x;
     this.y = y;
     this.locate = function(){
@@ -40,3 +40,15 @@ shape.about = function(){
     console.log('I am colourful');
 }
 console.log(shape);
+
+//in, of
+if('visible' in shape){
+    console.log('TRUE');
+}
+for(let attribute in shape){
+    console.log(attribute+' '+shape[attribute]);
+    console.log(attribute+' '+shape.attribute); //Sets everything to undefined. Makes a new object?
+}
+for(let attribute of Object.keys(shape)){   //of is for iterable objects such as array. //Object.keys() puts every key into an array object
+    console.log(attribute);
+}
